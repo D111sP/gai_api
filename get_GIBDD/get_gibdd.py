@@ -73,3 +73,11 @@ def get_wanted(answer: str, token: str, vin: str):
     response = requests.post(url, data=payload).json()
 
     return response
+
+def get_all_value(answer: str, token: str, vin: str):
+    array_all_value = []
+    array_all_value.append(get_history(answer, token, vin))
+    array_all_value.append(get_dtp(answer, token, vin))
+    array_all_value.append(get_restrict(answer, token, vin))
+    array_all_value.append(get_diagnostic(answer, token, vin))
+    return array_all_value

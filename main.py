@@ -19,13 +19,16 @@ def recognize_captcha(array_cut_img: list):
 def get_info_GIBDD(vin):
     counter = 0
     while 1:
+        array_response = []
         counter += 1
         img, token = get_captcha()
         array_cut_img = clean_img(img)
         answer = recognize_captcha(array_cut_img)
         response = get_history(answer, token, vin)
         if response.get('code') == None:
-            print(response)
+            array_response.append(response)
+            array_response = get_all_value(answer, token, vin)
+            print(array_response)
             print(f'Captcha was solved in {counter} attempts')
             break
 
