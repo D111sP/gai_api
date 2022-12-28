@@ -1,0 +1,313 @@
+div#checkAutoSheetTemplate {
+	display: none;
+}
+
+div#checkAutoContainer {
+	margin: 10px auto;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	position: relative;
+	max-width: 800px;
+}
+
+
+div#checkAutoHeader {
+	margin-bottom: 10px;
+	background: url(//check.gibdd.ru/proxy/check/images/bg.png);
+}
+
+
+div#checkAutoSheet {
+	position: relative;
+	background: #fff;
+	padding: 25px;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px 10px 0px #333333;
+	-webkit-box-shadow: 5px 5px 10px 0px #333333;
+	-moz-box-shadow: 5px 5px 10px 0px #333333;
+}
+
+div#checkAutoSheet p.title-vin {
+	text-align: center;
+	font-weight: bold;
+	text-indent: 0;
+	color: #8b0202;
+}
+
+div#checkAutoVIN {
+	text-align: center;
+	color: #8b0202;
+}
+
+div.checkAutoSection ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+div.checkAutoSection ul > li {
+	position: relative;
+	padding: 2px 4px;
+}
+
+div.checkAutoSection ul.fields-list > li:hover,
+ul.ownershipPeriods > li:hover
+{
+		background-color: rgba(33, 119, 166, 0.21);
+}
+
+div.checkAutoSection ul > li > span.field,
+ul.ownershipPeriods > li{
+	color: #2980b9;
+	font-weight: bold;
+}
+
+	div.checkAutoSection ul > li > span.field {
+		float: right;
+	}
+
+	div.checkAutoSection ul > li > span.field > a {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	ul p.ul-title {
+		font-style: oblique;
+		color: #083A5D;;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+
+
+p.check-space {
+	position: relative;
+}
+
+a.checker {
+	text-decoration: none;
+	display: block;
+	margin: 0 auto;
+	color: #adcbdf;
+	background-color: #2980b9;
+	padding: 8px 0px;
+	border-radius: 4px;
+	font-weight: bold;
+	font-size: 14pt;
+	cursor: pointer;
+	text-align: center;
+}
+
+
+a.checker:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.checkDescription {
+  font-size: 10pt;
+	color: #7f8c8d;
+}
+
+
+p.description{
+	color: #7d7d7d;
+	font-style: italic;
+	font-size: .8em;
+}
+
+
+#checkAutoContainer h2 {
+	text-align: center;
+}
+
+
+#checkAutoForm {
+	text-align: center;
+}
+
+
+.checkAutoSection {
+	position: relative;
+	padding: 15px 0;
+}
+
+
+#checkAutoVIN {
+	padding: 7px;
+	font-size: 28pt;
+	background-color: transparent;
+	border: none;
+	border-bottom: solid 1px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bolder;
+	color: #8b0202;
+}
+#checkAutoVIN[readonly=readonly]
+{
+	color: #A59999;
+	border: none;
+}
+
+
+#captchaDialog {
+	background-color: rgb(239, 245, 248);
+	position: absolute;
+	z-index: 9999;
+	width: 180px;
+	padding: 15px;
+	box-shadow: 5px 5px 10px 1px #333333;
+	-webkit-box-shadow: 5px 5px 10px 1px #333333;
+	-moz-box-shadow: 5px 5px 10px 1px #333333;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+#captchaPic > img {
+	width: 180px;
+	height: 55px;
+	cursor: pointer;
+}
+
+
+#captchaTitle {
+	position: relative;
+	border-bottom: 1px solid;
+	margin-bottom: 15px;
+}
+
+div#captchaFade {
+	display: none;
+	position: absolute;
+	z-index: 9998;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(149, 165, 166, 0.8)
+}
+
+
+div#captchaInput input{
+	padding: 7px 7px;
+	font-size: 24pt;
+	width: 163px;
+	text-align: center;
+}
+
+#captchaButtons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+	#captchaButtons > span.button{
+		cursor: pointer;
+		padding: 5px;
+		border: 1px solid;
+		border-color: rgb(239, 245, 248);
+	}
+
+	#captchaButtons > span.button:hover{
+		cursor: pointer;
+		padding: 5px;
+		border-color: #0000ff;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+	}
+
+div.checkResult {
+	display: none;
+}
+
+p.check-message {
+	color: #9c6347;
+}
+
+div.reset-btn {
+	display: none;
+	text-align: center;
+}
+
+div.print-btn {
+	color: rgba(3, 3, 3, .4);
+	position: absolute;
+	right: 10px;
+	display: none;
+	top: 10px;
+}
+
+div.reset-btn:hover,
+div.print-btn:hover {
+	cursor: pointer;
+	color: rgba(3, 3, 3, 1.0);
+	text-decoration: underline;
+}
+
+div.alertDiv {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+    background: #e74c3c;
+    width: 100%;
+    padding: 10px;
+	font-weight: bolder;
+    color: white;
+}
+
+ul.fields-list > li {
+	clear:both;
+}
+
+/* For damages map*/
+table.damageMap { border: 0; padding: 0; margin: 0; width: 442px; }
+
+.damageMap ul { display: none; border: 1px solid; border-radius: 10px; list-style-type: disc; }
+.damageMap li { display: none; list-style-type: disc; padding: 10px; }
+
+.damageMap.V10 ul, .damageMap.V11 ul, .damageMap.V12 ul, .damageMap.V13 ul, .damageMap.V14 ul, .damageMap.V15 ul, .damageMap.V16 ul,
+.damageMap.V001 ul, .damageMap.V002 ul, .damageMap.V003 ul, .damageMap.V004 ul, .damageMap.V005 ul, .damageMap.V006 ul		{ display: block; }
+.damageMap li.title { display: block; }
+
+.damageMap.V10 li.id10							 { display: list-item; }
+.damageMap.V11 li.id11, .damageMap.V001 li.id001 { display: list-item; }
+.damageMap.V12 li.id12, .damageMap.V002 li.id002 { display: list-item; }
+.damageMap.V13 li.id13, .damageMap.V003 li.id003 { display: list-item; }
+.damageMap.V14 li.id14, .damageMap.V004 li.id004 { display: list-item; }
+.damageMap.V15 li.id15, .damageMap.V005 li.id005 { display: list-item; }
+.damageMap.V20 li.id20, .damageMap.V006 li.id006 { display: list-item; }
+
+.damageMap svg
+{ display: none; }
+
+.damageMap.V01 .O, .damageMap.V02 .O, .damageMap.V03 .O, .damageMap.V04 .O, .damageMap.V05 .O, .damageMap.V06 .O, .damageMap.V07 .O, .damageMap.V08 .O, .damageMap.V09 .O
+{ display: block; }
+
+.damageMap.V110 .L, .damageMap.V111 .L, .damageMap.V112 .L, .damageMap.V113 .L, .damageMap.V114 .L, .damageMap.V115 .L, .damageMap.V116 .L, .damageMap.V117 .L, .damageMap.V118 .L, .damageMap.V119 .L,
+.damageMap.V120 .L, .damageMap.V121 .L, .damageMap.V122 .L, .damageMap.V123 .L, .damageMap.V124 .L, .damageMap.V125 .L, .damageMap.V126 .L,
+.damageMap.V210 .L, .damageMap.V211 .L, .damageMap.V212 .L, .damageMap.V213 .L, .damageMap.V214 .L, .damageMap.V215 .L, .damageMap.V216 .L, .damageMap.V217 .L, .damageMap.V218 .L, .damageMap.V219 .L,
+.damageMap.V220 .L, .damageMap.V221 .L, .damageMap.V222 .L, .damageMap.V223 .L, .damageMap.V224 .L, .damageMap.V225 .L, .damageMap.V226 .L
+{ display: block; }
+
+.damageMap.V130 .B, .damageMap.V131 .B, .damageMap.V132 .B, .damageMap.V133 .B, .damageMap.V134 .B, .damageMap.V135 .B, .damageMap.V136 .B, .damageMap.V137 .B, .damageMap.V138 .B, .damageMap.V139 .B,
+.damageMap.V140 .B, .damageMap.V141 .B, .damageMap.V142 .B, .damageMap.V143 .B, .damageMap.V144 .B,
+.damageMap.V230 .B, .damageMap.V233 .B, .damageMap.V234 .B, .damageMap.V233 .B, .damageMap.V234 .B, .damageMap.V235 .B, .damageMap.V236 .B, .damageMap.V237 .B, .damageMap.V238 .B, .damageMap.V239 .B,
+.damageMap.V240 .B, .damageMap.V241 .B, .damageMap.V242 .B, .damageMap.V243 .B, .damageMap.V244 .B
+{ display: block; }
+
+.damageMap.V150 .M, .damageMap.V151 .M, .damageMap.V152 .M, .damageMap.V153 .M, .damageMap.V154 .M, .damageMap.V155 .M,
+.damageMap.V250 .M, .damageMap.V253 .M, .damageMap.V254 .M, .damageMap.V253 .M, .damageMap.V254 .M, .damageMap.V255 .M
+{ display: block; }
+
+.damageMap.V160 .F, .damageMap.V161 .F, .damageMap.V162 .F, .damageMap.V163 .F, .damageMap.V164 .F, .damageMap.V165 .F, .damageMap.V166 .F, .damageMap.V167 .F, .damageMap.V168 .F, .damageMap.V169 .F,
+.damageMap.V170 .F, .damageMap.V171 .F, .damageMap.V172 .F, .damageMap.V173 .F, .damageMap.V174 .F, .damageMap.V175 .F, .damageMap.V176 .F, .damageMap.V177 .F, .damageMap.V178 .F, .damageMap.V179 .F,
+.damageMap.V180 .F,
+.damageMap.V260 .F, .damageMap.V261 .F, .damageMap.V262 .F, .damageMap.V263 .F, .damageMap.V264 .F, .damageMap.V265 .F, .damageMap.V266 .F, .damageMap.V267 .F, .damageMap.V268 .F, .damageMap.V269 .F,
+.damageMap.V270 .F, .damageMap.V271 .F, .damageMap.V272 .F, .damageMap.V273 .F, .damageMap.V274 .F, .damageMap.V275 .F, .damageMap.V276 .F, .damageMap.V277 .F, .damageMap.V278 .F, .damageMap.V279 .F,
+.damageMap.V280 .F
+{ display: block; }
+
+.damageMap.V190 .D, .damageMap.V191 .D, .damageMap.V192 .D, .damageMap.V193 .D, .damageMap.V194 .D, .damageMap.V195 .D, .damageMap.V196 .D, .damageMap.V197 .D, .damageMap.V198 .D, .damageMap.V199 .D,
+.damageMap.V290 .D, .damageMap.V291 .D, .damageMap.V292 .D, .damageMap.V293 .D, .damageMap.V294 .D, .damageMap.V295 .D, .damageMap.V296 .D, .damageMap.V297 .D, .damageMap.V297 .D, .damageMap.V297 .D
+{ display: block; }

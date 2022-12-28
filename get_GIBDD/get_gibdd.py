@@ -76,8 +76,9 @@ def get_wanted(answer: str, token: str, vin: str):
 
 def get_all_value(answer: str, token: str, vin: str):
     array_all_value = []
-    array_all_value.append(get_history(answer, token, vin))
-    array_all_value.append(get_dtp(answer, token, vin))
-    array_all_value.append(get_restrict(answer, token, vin))
-    array_all_value.append(get_diagnostic(answer, token, vin))
+
+    array_all_value.append({"ДТП" : get_dtp(answer, token, vin)}) #ДТП
+    array_all_value.append({"ОГРАНИЧЕНИЕ" : get_restrict(answer, token, vin)}) #
+    array_all_value.append({"ДИАГНОСТИКА" : get_diagnostic(answer, token, vin)})
+    array_all_value.append({"РОЗЫСК": get_wanted(answer, token, vin)})
     return array_all_value

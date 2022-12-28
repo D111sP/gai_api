@@ -26,8 +26,8 @@ def get_info_GIBDD(vin):
         answer = recognize_captcha(array_cut_img)
         response = get_history(answer, token, vin)
         if response.get('code') == None:
-            array_response.append(response)
             array_response = get_all_value(answer, token, vin)
+            array_response.append({"ИСТОРИЯ": response})
             print(array_response)
             print(f'Captcha was solved in {counter} attempts')
             break
