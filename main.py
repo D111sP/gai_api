@@ -1,6 +1,7 @@
 from clean_img_captcha.clean_img_26_12 import clean_img
 from get_GIBDD.get_gibdd import *
 from get_vin.get_vin import get_vin
+from html_css.get_img_dtp import get_img_dtp
 
 import cv2
 from tensorflow import keras
@@ -28,7 +29,10 @@ def get_info_GIBDD(vin):
         if response.get('code') == None:
             array_response = get_all_value(answer, token, vin)
             array_response.append({"ИСТОРИЯ": response})
-            print(array_response)
+            print(array_response[0]['ДТП']['RequestResult']['Accidents'])
+
+            for el in range(len(array_response[0]['ДТП']['RequestResult']['Accidents'])):
+                get_img_dtp(array_response[0]['ДТП']['RequestResult']['Accidents'][el]['DamagePoints'])
             print(f'Captcha was solved in {counter} attempts')
             break
 
@@ -36,7 +40,6 @@ def get_info_GIBDD(vin):
 if __name__ == '__main__':
     model = keras.models.load_model('model/model_80_30_loss_0_11_acc_0_97.h5')
     vin = "XWEDH511AB0010069" #get_vin(str(input("Введите номер авто: ")))
-    for el in range(10):
-        time_start = datetime.datetime.now()
-        get_info_GIBDD(vin)
-        print(f"Time requiers: {datetime.datetime.now() - time_start}")
+    time_start = datetime.datetime.now()
+    get_info_GIBDD(vin)
+    print(f"Time requiers: {datetime.datetime.now() - time_start}")
