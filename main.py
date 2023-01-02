@@ -47,7 +47,7 @@ def get_info_GIBDD(vin):
 if __name__ == '__main__':
     model = keras.models.load_model('model/model_80_30_loss_0_11_acc_0_97.h5')
     #vin = "XWEDH511AB0010069"
-    vin = get_vin("Е790АС186")
+    vin = get_vin(str(input("Ведите номер: ")))
     time_start = datetime.datetime.now()
     get_info_GIBDD(vin)
     print(f"Time requiers: {datetime.datetime.now() - time_start}")
