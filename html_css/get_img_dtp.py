@@ -3594,15 +3594,16 @@ def get_img_dtp(array_number):
     { display: block; }
     </style>"""
 
-    f = open("car.html", "w")
+    html_file = os.getcwd() + "\\html_css\\car.html"
+
+    f = open(html_file, "w")
     f.write(body)
     f.close()
 
-    html_file = os.getcwd() + "\\car.html"
     browser = webdriver.Chrome(executable_path="C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\html_css\\chromedriver.exe")
-
     browser.get("file:///" + html_file)
+
     element = browser.find_element(By.ID, "damageTabNum710009261")
-    element.screenshot("C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\img_dtp\\"+"".join(array_number)+".png")
+    element.screenshot("C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\img_dtp\\1.png")
 
     browser.quit()

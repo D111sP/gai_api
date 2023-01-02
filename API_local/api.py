@@ -1,13 +1,17 @@
+from fastapi import FastAPI
 from clean_img_captcha.clean_img_26_12 import clean_img
 from get_GIBDD.get_gibdd import *
 from get_vin.get_vin import get_vin
-from html_css.get_img_dtp import get_img_dtp
-
+from main import get_info_GIBDD
 import cv2
 from tensorflow import keras
 import datetime
-import os
+
 from base64 import b64encode as enc64
+
+app = FastAPI()
+
+model = keras.models.load_model('model/model_80_30_loss_0_11_acc_0_97_api.h5')
 
 def recognize_captcha(array_cut_img: list):
     answer = ''
@@ -31,23 +35,22 @@ def get_info_GIBDD(vin):
         if response.get('code') == None:
             array_response = get_all_value(answer, token, vin)
             array_response.append({"ИСТОРИЯ": response})
+            print(array_response[0]['ДТП']['RequestResult']['Accidents'])
             # Перевод изображения в Base64
             # for el in range(len(array_response[0]['ДТП']['RequestResult']['Accidents'])):
             #     get_img_dtp(array_response[0]['ДТП']['RequestResult']['Accidents'][el]['DamagePoints'])
-                # with open("C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\img_dtp\\1.png", 'rb') as f:
-                #     binary = enc64(f.read())  # open binary file in read mode
-                # array_response[0]['ДТП']['RequestResult']['Accidents'][el]['DamagePoints'] = binary
-                # f.close()
-                #os.remove("C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\img_dtp\\1.png")
+            #     with open("C:\\Users\\elen0\\OneDrive\\Документы\\GitHub\\gibdd_api\\img_dtp\\1.png", 'rb') as f:
+            #         binary = enc64(f.read())  # open binary file in read mode
+            #     array_response[0]['ДТП']['RequestResult']['Accidents'][el]['DamagePoints'] = binary
+            #     f.close()
             print(f'Captcha was solved in {counter} attempts')
-            print(array_response)
+            return array_response
             break
 
-
-if __name__ == '__main__':
-    model = keras.models.load_model('model/model_80_30_loss_0_11_acc_0_97.h5')
-    #vin = "XWEDH511AB0010069"
-    vin = get_vin("Е790АС186")
+@app.get('/{number}')
+def home(number: str):
+    vin = get_vin(number)
     time_start = datetime.datetime.now()
-    get_info_GIBDD(vin)
+    answer = get_info_GIBDD(vin)
     print(f"Time requiers: {datetime.datetime.now() - time_start}")
+    return {"key" : answer}
